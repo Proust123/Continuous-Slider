@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infinite Slider</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .main {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      .slider {
+        height: 350px;
+        width: 70%;
+        border-radius: 5px;
+        box-shadow: 1px 1px 5px 1px seagreen;
+        overflow: hidden;
+      }
+
+      .slider_box {
+        position: relative;
+        height: 100%;
+        width: 100%;
+      }
+      .color1 {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        transform: translateX(100%);
+        transition: 0.5s;
+        position: absolute;
+        background-color: aqua;
+      }
+      .color2 {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        transform: translateX(100%);
+        transition: 0.5s;
+        position: absolute;
+        background-color: gold;
+      }
+      .color3 {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        transform: translateX(100%);
+        transition: 0.5s;
+        position: absolute;
+        background-color: salmon;
+      }
+      .color4 {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        transform: translateX(100%);
+        transition: 0.5s;
+        position: absolute;
+        background-color: hotpink;
+      }
+      .pre {
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        top: 45%;
+        background-color: rgb(47, 0, 255);
+        left: 5%;
+        border: none;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .next {
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        top: 45%;
+        background-color: rgb(38, 0, 255);
+        right: 5%;
+        border: none;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .currentActive {
+        /* transform: translateX(0%); */
+        animation: a1 0.5s linear forwards;
+        z-index: 10;
+      }
+      @keyframes a1 {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(0%);
+        }
+      }
+      .currentActive2 {
+        transition: 0.5s;
+        animation: a2 0.5s linear forwards;
+        /* transform: translateX(-100%); */
+      }
+      @keyframes a2 {
+        0% {
+          transform: translateX(0%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      .prevActive {
+        animation: prevSlide 0.5s linear forwards;
+      }
+      @keyframes prevSlide {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(0%);
+        }
+      }
+      .prevActive2 {
+        animation: prevSlide2 0.5s linear forwards;
+      }
+      @keyframes prevSlide2 {
+        0% {
+          transform: translateX(0%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="main">
+      <div class="slider">
+        <div class="slider_box">
+          <div class="color color1 currentActive">1</div>
+          <div class="color color2">2</div>
+          <div class="color color3">3</div>
+          <div class="color color4">4</div>
+        </div>
+      </div>
+      <button class="next">Next</button>
+      <button class="pre">Pre</button>
+    </section>
+
+    <!-- <script src="./slider.js"></script> -->
+    <!-- <script src="./sliderjs3.js"></script> -->
+    <script src="./script.js"></script>
+  </body>
+</html>
